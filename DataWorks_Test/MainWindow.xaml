@@ -5,12 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DataWorks_Test"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="DataWorks_Test" Height="146.926" Width="667.992">
     <Grid>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="71,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="textBox_TextChanged"/>
-        <Label x:Name="label" Content="Label" HorizontalAlignment="Left" Margin="71,133,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="23" Margin="314,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="textBox1_TextChanged"/>
-        <Label x:Name="label1" Content="Label" HorizontalAlignment="Left" Margin="330,141,0,0" VerticalAlignment="Top"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <GroupBox x:Name="groupBox" Header="Римские цифры" Margin="0">
+            <StackPanel Margin="0">
+                <TextBox x:Name="textBox" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" TextChanged="textBox_TextChanged" Margin="0,5"/>
+                <Label x:Name="label" Content="Результат" VerticalAlignment="Top" Margin="0,5"/>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox x:Name="groupBox1" Header="Сбалансированность выражения" Margin="0" Grid.Column="1">
+            <StackPanel Margin="0">
+                <TextBox x:Name="textBox1" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" TextChanged="textBox1_TextChanged" Margin="0,5"/>
+                <Label x:Name="label1" Content="Результат" VerticalAlignment="Top" Margin="0,5"/>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox x:Name="groupBox2" Grid.Column="2" Header="Двусвязный список" Margin="0">
+            <StackPanel Margin="0">
+                <Button x:Name="button" Content="Проверить список" Margin="0,5" Click="button_Click"/>
+            </StackPanel>
+        </GroupBox>
 
     </Grid>
 </Window>

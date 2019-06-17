@@ -82,14 +82,18 @@ namespace DataWorks_Test
             }
             return false;
         }
-
+        // обратный порядок в листе (перестановка) 
         public void Reverse()
         {
-            for (int i = 0; i < Count; i++)
+            DoublyNode<T> current = tail;
+            while (current != null)
             {
-                var buffer = tail.Data;
-                Remove(tail.Data);
-                AddFirst(buffer);
+                // добавляем в конец
+                Add(current.Data);
+                // удаляем первое вхождение, так как первым будет старое значение
+                Remove(current.Data);
+                // переключаемся на предыдущее
+                current = current.Previous;
             }
         }
         public int Count { get { return count; } }

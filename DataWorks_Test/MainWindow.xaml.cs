@@ -23,7 +23,6 @@ namespace DataWorks_Test
         public MainWindow()
         {
             InitializeComponent();
-            abc();
         }
 
         private void textBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -133,35 +132,34 @@ namespace DataWorks_Test
         {
             DoublyLinkedList<string> linkedList = new DoublyLinkedList<string>();
             // добавление элементов
-            linkedList.Add("Bob");
-            linkedList.Add("Bill");
-            linkedList.Add("Tom");
-            linkedList.AddFirst("Kate");
+            linkedList.Add("A");
+            linkedList.Add("B");
+            linkedList.Add("C");
+            linkedList.Add("D");
+            linkedList.Add("E");
 
             MessageBox.Show("прямой порядок");
             foreach (var item in linkedList)
             {
                 MessageBox.Show(item);
             }
-            // удаление
-            linkedList.Remove("Bill");
 
-            MessageBox.Show("прямой порядок после удаления элемента ");
-            foreach (var item in linkedList)
+            MessageBox.Show("простой обратный проход для сравнения");
+            foreach (var item in linkedList.BackEnumerator())
             {
                 MessageBox.Show(item);
             }
-
-            MessageBox.Show("обратный порядок");
-            foreach (var t in linkedList.BackEnumerator())
-            {
-                MessageBox.Show(t);
-            }
+            MessageBox.Show("теперь лист развёрнут в обратном порядке");
             linkedList.Reverse();
             foreach (var item in linkedList)
             {
                 MessageBox.Show(item);
-            } 
+            }
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            abc();
         }
     }
 }
